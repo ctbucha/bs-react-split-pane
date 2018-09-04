@@ -7,7 +7,7 @@ type split = [ | `vertical | `horizontal];
 [@bs.deriving abstract]
 type props = {
   [@bs.optional]
-  split,
+  split: string,
   [@bs.optional]
   className: string,
   [@bs.optional]
@@ -29,12 +29,17 @@ let make =
       ~maxSize=?,
       ~size=?,
       children,
-    ) =>
+    ) => {
+  let splitJs =
+    switch (split) {
+    | Some(x) => Some(splitToJs(x))
+    | None => None
+    };
   ReasonReact.wrapJsForReason(
     ~reactClass=pane,
     ~props=
       props(
-        ~split?,
+        ~split=?splitJs,
         ~className?,
         ~initialSize?,
         ~minSize?,
@@ -44,3 +49,4 @@ let make =
       ),
     children,
   );
+};
