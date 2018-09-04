@@ -12,11 +12,11 @@ type props = {
   [@bs.optional]
   className: string,
   [@bs.optional]
-  split,
+  split: string,
   [@bs.optional]
   resizerSize: int,
   [@bs.optional]
-  primary,
+  primary: string,
   [@bs.optional]
   allowResize: bool,
   [@bs.optional]
@@ -44,15 +44,25 @@ let make =
       ~size=?,
       ~step=?,
       children,
-    ) =>
+    ) => {
+  let splitJs =
+    switch (split) {
+    | Some(x) => Some(splitToJs(x))
+    | None => None
+    };
+  let primaryJs =
+    switch (primary) {
+    | Some(x) => Some(primaryToJs(x))
+    | None => None
+    };
   ReasonReact.wrapJsForReason(
     ~reactClass=splitPane,
     ~props=
       props(
         ~className?,
-        ~split?,
+        ~split=?splitJs,
         ~resizerSize?,
-        ~primary?,
+        ~primary=?primaryJs,
         ~allowResize?,
         ~defaultSize?,
         ~maxSize?,
@@ -63,3 +73,4 @@ let make =
       ),
     children,
   );
+};
