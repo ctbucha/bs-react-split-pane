@@ -1,6 +1,7 @@
 [@bs.module "react-split-pane"]
 external pane : ReasonReact.reactClass = "Pane";
 
+[@bs.deriving jsConverter]
 type split = [ | `vertical | `horizontal];
 
 [@bs.deriving abstract]

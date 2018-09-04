@@ -1,18 +1,21 @@
 [@bs.module "react-split-pane"]
 external splitPane : ReasonReact.reactClass = "default";
 
+[@bs.deriving jsConverter]
 type split = [ | `vertical | `horizontal];
+
+[@bs.deriving jsConverter]
 type primary = [ | `first | `second];
 
 [@bs.deriving abstract]
 type props = {
   [@bs.optional]
   className: string,
-  [@bs.optional] [@bs.string]
+  [@bs.optional]
   split,
   [@bs.optional]
   resizerSize: int,
-  [@bs.optional] [@bs.string]
+  [@bs.optional]
   primary,
   [@bs.optional]
   allowResize: bool,
