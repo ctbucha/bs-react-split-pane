@@ -1,0 +1,41 @@
+{
+  "name": "@ctbucha/bs-react-split-pane",
+  "version": "0.0.1",
+  "description": "BuckleScript bindings for react-split-pane.",
+  "main": "index.js",
+  "scripts": {
+    "build": "bsb -make-world",
+    "watch": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctbucha/bs-react-split-pane.git"
+  },
+  "keywords": [
+    "react-split-pane",
+    "bucklescript",
+    "reasonml",
+    "react",
+    "splitpane",
+    "ui",
+    "binding",
+    "component"
+  ],
+  "author": "ctbucha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ctbucha/bs-react-split-pane/issues"
+  },
+  "homepage": "https://github.com/ctbucha/bs-react-split-pane#readme",
+  "dependencies": {
+    "react-split-pane": "^2.0.2"
+  },
+  "devDependencies": {
+    "bs-platform": "^4.0.5"
+  },
+  "peerDependencies": {
+    "reason-react": "^0.5.3"
+  }
+}
