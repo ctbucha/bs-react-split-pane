@@ -30,13 +30,14 @@ Then add `@ctbucha/bs-react-split-pane` to `bs-dependencies` in your
 /* App.re */
 let component = ReasonReact.statelessComponent("App");
 
-let make = _children => { 
+let make = _children => {
   ...component,
-  render: _self => BsSplitPane.(
-    <SplitPane size=100>
-      <div>(ReasonReact.string("first div"))</div>
-      <div>(ReasonReact.string("second div"))</div>
-    </SplitPane>
-  )
+  render: _self =>
+    BsSplitPane.(
+      <SplitPane size=100 split=`horizontal>
+        <div> (ReasonReact.string("first div")) </div>
+        <div> (ReasonReact.string("second div")) </div>
+      </SplitPane>
+    ),
 };
 ```
