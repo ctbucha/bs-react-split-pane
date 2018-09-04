@@ -8,11 +8,11 @@ type primary = [ | `first | `second];
 type props = {
   [@bs.optional]
   className: string,
-  [@bs.optional]
+  [@bs.optional] [@bs.string]
   split,
   [@bs.optional]
   resizerSize: int,
-  [@bs.optional]
+  [@bs.optional] [@bs.string]
   primary,
   [@bs.optional]
   allowResize: bool,

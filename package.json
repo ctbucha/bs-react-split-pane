@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/ctbucha/bs-react-split-pane#readme",
   "dependencies": {
-    "react-split-pane": "^0.1.82"
+    "react-split-pane": "^2.0.2"
   },
   "devDependencies": {
     "bs-platform": "^4.0.5"
